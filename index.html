@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Spam Classifer</title>
+    <style>
+        .center{
+            text-align: center;
+        }
+        .border{
+            border-right: solis black;
+        }
+        .column{
+            padding: 10px;
+            display: inline;
+            text-align: center;
+            float: left;
+            height:auto;
+        }
+        p{
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="column border" style="width:35%; padding: right 50px; background-color: blue; text-align: left;">
+            <h3 style="text-align: center;">Sample Emails</h3>
+            <h4 style="color: red;">Spam</h4>
+            <p>
+                My wife and I won the Mega Millions jackpot for $410 million USD on June 9, 2020 and we have voluntarily decided to donate the amount of 10M USD for charity, we are trying to reach random people from various sources and fashions to touch life from various angles, Therefore you get the message here. You have been registered as one of the lucky recipients to receive $2,000,000.00 USD <br><br>
+                To verify<br>
+                https://edition.cnn.com/2020/19/us/mega-millions-arizona-jackpot-trnd/index.html<br><br>
+                Get back to me on how to receive the donation<br>
+                Thank you<br>
+                Dennis and Maria McGee
+            </p>
+            
+            <h4 style="color:pink">Not Spam</h4>
+            <p>
+                Dear SIH Participant,<br><br>
+                We hope that you are doing well!!!<br>
+                The Inter-Institutional Inclusive Innovation Center (i4C) and the team of SIH are grateful to you for participating in Smart India Hackathon, the world's largest hackathon, and giving such genius solutions. 
+                We are the team that consistently strives to bring out the most innovative educational platforms, like Smart India Hackathon, Smart School Hackathon.<br><br>
+                To reconnect with us  please share your details by filling the form:- https://forms.gle/6rrMSQCLvuMCKi8<br><br>
+                Looking forward to a positive response!!!<br><br>
+                Thanks 
+                Team i4C
+            </p>
+        </div>
+        <div class="column"style="width: 55%;">
+            <h1 class="'center">Enail Spam Classifer</h1>
+            {% if response %}
+                {% if response %== -1 %}
+                    <h2 style="color:green">not Spam</h2>
+                {% else %}
+                    <h2 style="color:pink"></h2>
+                {% endif %}
+            {% endif %}
+            
+            <form action="/predict" method="post">
+                <label>type your Emails</label><br><br>
+                <textarea rows=""15" cols="70" name="email" placeholder="types yours email herer"></textarea><br><br>
+                <input type="submit" value="Check" style="width: 80px; height: 50px;">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
