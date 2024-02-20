@@ -1,11 +1,13 @@
-from utils import db_connect
-engine = db_connect()
-
-# your code here
-import flask from Flask , render_templete, request
+from flask import Flask, render_template, request
 import pickle
 
-app =Flask(_name_)
+
+# from utils import db_connect
+# engine = db_connect()
+
+# your code here
+
+app = Flask(__name__)
 
 cv=pickle.load(open('/workspaces/machine-learning-python-template-ds-Julio/models/cv.pkl','rb'))
 clf=pickle.load(open('/workspaces/machine-learning-python-template-ds-Julio/models/clf.pkl','rb'))
